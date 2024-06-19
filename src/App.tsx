@@ -1,11 +1,26 @@
-import ListGroup from './components/ListGroup'
+import Alert from "./components/Alert";
+import ListGroup from "./components/ListGroup";
+import Button from "./components/Button";
 
-function App () {
+function App() {
   const cities = ["dhaka", "chittagong", "rajshahi", "sylhet", "barishal"];
-  return <div>
+  const handleSelectItem = (item: string) => {
+    console.log(item);
+  };
 
-    <ListGroup items={cities} heading='City Names'/>
-  </div>
+  return (
+    <div>
+      <Button children="hyy" onClick={() => {console.log("ok");}} ></Button>
+      <Alert>
+        hello <span>world</span>
+      </Alert>
+      <ListGroup
+        items={cities}
+        heading="City Names"
+        onSelectItem={handleSelectItem}
+      />
+    </div>
+  );
 }
 
 export default App;
